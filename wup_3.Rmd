@@ -34,13 +34,16 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 ```{r}
 basicCN + geom_boxplot()
 ```
-  
-  
+ 
+according to the boxplot above  it appears that the mean consumtion of alcohol was significantly higher for those who chose to set in the back seat at 9.6 percent than those who sat on the front at  a mean 1.8 percent of than 3.28 percent who sat in the middle .  
+
 ### get fancy  
 
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+
+The pox plot tells us that by average, the trust level for back row seats is 95 percent and if not overlaps between the two boxes, this provides statistically significant differences in the median seating range. It will also confirm the rejection of the null hypothesis of no distinction.
 
 ## Numerical Summarys 
 
@@ -48,12 +51,16 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 favstats(alcohol~Seat,data = davisdata )
 ```
 
+the cross tabulation statistical chart shows that the mean consumption of alcohol consumed by others who chose to sit in the back row its significantly higher at 9.8 percent as opposed to 1.8 percent in the front row and 3.28 in the middle row 
+
 ## Inferential Tests
 
 ```{r}
 model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
+
+The anova test demonstrates that p is less than 0.05 and needs a p value of .000116. It tells us that the null hypothesis should be dismissed because there can be no row-based chnage in which a person is sitting. 
 
 
 ```{r}
@@ -63,7 +70,9 @@ plot(TukeyHSD(model1),las=2)
 
 
 
-
 ## Conclusions
+is there a difference between the avrage alcohol consumed and the row we choose to sit in 
+
+From the box plots, numerical summaries and the Anova test above we infer that indeed a discrepancy exists between the consumption of alcohol and the number of people who choose to settle in the row
 
 
