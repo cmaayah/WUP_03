@@ -21,7 +21,7 @@ davisdata <- read.csv(file="UCDavis.csv")
 
 $H_0$: the null hypothesis is that there is no difference between the alcohol consumed between the row you choose to sit in ??
 
-$H_A$: the alternative hypothesis is that there is a difference between the alcohol consumed between the row you choose to sit in ??
+$H_A$: the alternative hypothesis is that there is a difference between the alcohol consumed between the row you choose to sit in ?? 
 
 
 ## Now with ggplot - first select the basic data
